@@ -80,32 +80,26 @@ export default function App() {
     navigation.navigate('Posts');
   };
 
-  const onSearchAuthors = (input) => {
-    const filteredAuthors = allAuthors.filter((item) => {
+  const onSearch = (arr, input, setMethod, prop1, prop2) => {
+    const filteredArr = arr.filter((item) => {
       if (input.trim()) {
         return (
-          item.name.toString().toLowerCase().includes(input.toLowerCase()) ||
-          item.email.toString().toLowerCase().includes(input.toLowerCase())
+          item[prop1].toString().toLowerCase().includes(input.toLowerCase()) ||
+          item[prop2].toString().toLowerCase().includes(input.toLowerCase())
         );
       } else {
-        return allAuthors;
+        return arr;
       }
     });
-    setAuthors(filteredAuthors);
+    setMethod(filteredArr);
+  };
+
+  const onSearchAuthors = (input) => {
+    onSearch(allAuthors, input, setAuthors, 'name', 'email');
   };
 
   const onSearchPosts = (input) => {
-    const filteredPosts = allPosts.filter((item) => {
-      if (input.trim()) {
-        return (
-          item.body.toString().toLowerCase().includes(input.toLowerCase()) ||
-          item.title.toString().toLowerCase().includes(input.toLowerCase())
-        );
-      } else {
-        return allPosts;
-      }
-    });
-    setPosts(filteredPosts);
+    onSearch(allPosts, input, setPosts, 'body', 'title');
   };
 
   const context = {
