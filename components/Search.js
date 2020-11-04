@@ -13,9 +13,9 @@ const Search = ({
   <View style={styles.searchContainer}>
     <View style={styles.search}>
       <TextInput
-        onChangeText={(input) =>
-          onSearchAuthors ? setAuthorsInput(input) : setPostsInput(input)
-        }
+        onChangeText={(input) => {
+          onSearchAuthors ? setAuthorsInput(input) : setPostsInput(input);
+        }}
         style={styles.searchText}
         value={setAuthorsInput ? authorsInput : postsInput}
         placeholder="Search"

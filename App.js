@@ -48,6 +48,7 @@ export default function App() {
   }, [authorId, authorName]);
 
   useEffect(() => {
+    console.log('authorsInput');
     if (allAuthors === null) return;
     else onSearchAuthors(authorsInput);
   }, [authorsInput]);
@@ -76,7 +77,6 @@ export default function App() {
     setAuthorId(id);
     setAuthorName(name);
     setPostsInput('');
-    filterPosts();
     navigation.navigate('Posts');
   };
 
