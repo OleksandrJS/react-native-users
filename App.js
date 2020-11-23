@@ -60,8 +60,7 @@ export default function App() {
 
   const countNumberOfPosts = (arr) => {
     const numOfPosts = {};
-    for (let i = 0; i < arr.length; i++) {
-      const el = arr[i];
+    for (let el of arr) {
       if (numOfPosts[el.userId]) numOfPosts[el.userId] += 1;
       else numOfPosts[el.userId] = 1;
     }

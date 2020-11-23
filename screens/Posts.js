@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useContext } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Context } from '../App';
 import Post from '../components/Post';

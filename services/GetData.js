@@ -1,7 +1,7 @@
 /** @format */
 
 export default class GetData {
-  URL = 'https://jsonplaceholder.typicode.com';
+  _URL = 'https://jsonplaceholder.typicode.com';
 
   getData = async (url) => {
     const res = await fetch(url);
@@ -12,10 +12,10 @@ export default class GetData {
   };
 
   getAuthors = async () => {
-    return await this.getData(this.URL + '/users');
+    return await this.getData(this._URL + '/users');
   };
 
   getPosts = async () => {
-    return await this.getData(this.URL + '/posts');
+    return await this.getData(this._URL + '/posts');
   };
 }

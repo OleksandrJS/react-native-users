@@ -28,7 +28,7 @@ const Author = ({ name, email, id, navigation }) => {
   return (
     <TouchableOpacity
       style={styles.authorContainer}
-      onPress={onPress.bind(null, id, name, navigation)}
+      onPress={() => onPress(id, name, navigation)}
       activeOpacity={0.5}>
       <View style={styles.author}>
         <View style={styles.avatar}>
